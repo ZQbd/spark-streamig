@@ -27,6 +27,8 @@ object StateWC extends App {
   private val stateDstream: DStream[(String, Int)] = pairs.updateStateByKey(UpdateFunc)
 
   //窗口函数
+
+  //
 //  private val ssss: Any = pairs.reduceByKeyAndWindow((x:Int,y:Int)=>x+y,Seconds(30),Seconds(10))
   //
   stateDstream.reduceByKey(_+_).print()
