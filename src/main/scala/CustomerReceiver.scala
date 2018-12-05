@@ -46,7 +46,5 @@ class CustomerReceiver(host:String,port:Int) extends Receiver[String](StorageLev
 
   }
 
-
-
   override def onStop(): Unit = {}
 }

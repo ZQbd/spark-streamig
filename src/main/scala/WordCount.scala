@@ -25,7 +25,11 @@ object WordCount extends App {
 
   val WC: DStream[(String, Int)] = wordT.reduceByKey(_+_)
 
-  WC.print()
+  //DStream 可以 transform，如下：可以看到transform方法中直接将rdd暴露了出来，我们可以在这个方法中直接对rdd进行算子操作。
+  WC.transform(rdd=>rdd.filter(_._2<2)).print() //过滤掉次数小于2的word
+
+
+//  WC.print()
 
   //启动SparkStreamingContext
   ssc.start()
