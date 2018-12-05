@@ -34,8 +34,4 @@ object StateWC extends App {
   //gitTest
   println("/////////////")
 
-
-
-
-
 }
